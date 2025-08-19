@@ -9,17 +9,27 @@ let arrlist = JSON.parse(localStorage.getItem("itens")) || ["Tarefa"]
 function createButton(){
      list.innerHTML=""
     arrlist.map((e,i)=>{
+    const imgAdd = document.createElement("img")
+    imgAdd.setAttribute("src","SVG/adicionar.svg")
+
+    const imgDel = document.createElement("img")
+    imgDel.setAttribute("src","SVG/Delete.svg")
+
+    const imgEdit = document.createElement("img")
+    imgEdit.setAttribute("src","SVG/edit.svg")
+
      const elemt = document.createElement("div")
      elemt.setAttribute("class", "list-item")
      
 
-     const btnOk= document.createElement("button")
-     btnOk.setAttribute("class", "marcar")
-     btnOk.innerHTML = "ok";
+     const btnOk= document.createElement("img")
+     btnOk.setAttribute("src", "SVG/checkboxchek.svg")
+     
 
      const btnEdit= document.createElement("button")
      btnEdit.setAttribute("class", "edit")
-     btnEdit.innerHTML = "edt"
+     btnEdit.appendChild(imgEdit)
+     
 
     const text= document.createElement("span")
     text.setAttribute("class", "text")
@@ -27,7 +37,7 @@ function createButton(){
 
      const del = document.createElement("button")
      del.setAttribute("class", "delete")
-     del.innerHTML = "del"
+     del.appendChild(imgDel)
     
      const divcrud = document.createElement("div")
 
@@ -52,10 +62,11 @@ function createButton(){
 
             const ipt = document.createElement("input")
             ipt.setAttribute("type","text")
+             ipt.setAttribute("class","edit-text")
             ipt.value = text.textContent
 
             const okBtn = document.createElement("button")
-            okBtn.textContent="ok"
+            okBtn.appendChild(imgAdd)
 
             body.appendChild(divEdit)
             divEdit.append(ipt)
@@ -82,6 +93,11 @@ function createButton(){
      
      btnOk.addEventListener("click",()=>{
        text.classList.toggle("line")
+          if (btnOk.getAttribute("src") === "SVG/checkbox.svg") {
+        btnOk.setAttribute("src", "SVG/checkboxchek.svg");
+    } else {
+        btnOk.setAttribute("src", "SVG/checkbox.svg");
+    }
      })
     })
     localStorage.setItem("itens", JSON.stringify(arrlist))

@@ -1,7 +1,8 @@
 
-body{
-    height: 1000px;
-    position: relative;
+
+
+h1{
+    text-align: center;
 }
 .list{
     display: flex;
@@ -20,6 +21,7 @@ input#input{
 .list-item{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .container{
     border: 1px solid;
@@ -36,6 +38,10 @@ input#input{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.edit-text{
+    height: 2em;
 }
 
 .line{
