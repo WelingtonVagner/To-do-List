@@ -1,0 +1,43 @@
+
+body{
+    height: 1000px;
+    position: relative;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.todo{
+    display: flex;
+    width: 100%;
+    border: 1px solid;
+}
+input#input{
+    width: 100%;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    border: 1px solid;
+    width: 300px;
+}
+
+.divEdit{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.279);
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    text-decoration: line-through;
+}
